@@ -1,144 +1,217 @@
+/* Reset dasar */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-    font-family: 'Segoe UI', sans-serif;
-    margin: 0;
-    padding: 20px;
-    background: #f4f6f9;
-    color: #333;
+  font-family: 'Segoe UI', sans-serif;
+  background: #f9fbfd;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Navigasi */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #0d47a1;
+  padding: 15px 20px;
+  color: #fff;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.nav-logo {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.nav-menu {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+}
+
+.nav-menu li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.nav-menu li a:hover {
+  text-decoration: underline;
+}
+
+/* Section styling */
+.section {
+  padding: 40px 20px;
+  max-width: 960px;
+  margin: auto;
+}
+
+h1, h2, h3 {
+  color: #0d47a1;
+  margin-bottom: 20px;
+}
+
+/* List */
+.info-list {
+  list-style: disc;
+  margin-left: 20px;
+  padding-left: 10px;
+}
+
+.info-list li {
+  margin-bottom: 10px;
+}
+
+.c1 { color: #2e7d32; }
+.c2 { color: #0288d1; }
+.c3 { color: #6a1b9a; }
+.c4 { color: #ef6c00; }
+.c5 { color: #c62828; }
+
+/* Tabel */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+th, td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+}
+
+th {
+  background-color: #1976d2;
+  color: white;
+}
+
+input[type="number"] {
+  width: 60px;
+  padding: 5px;
+  text-align: center;
+}
+
+.btn-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.btn {
+  padding: 10px 25px;
+  background-color: #0d47a1;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  margin: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #08306b;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .nav-menu {
+    flex-direction: column;
+    gap: 10px;
   }
-  
-  h1, h2 {
-    text-align: center;
-    color: #0d47a1;
+  .section {
+    padding: 20px 10px;
   }
-  
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
+  table, thead, tbody, th, td, tr {
+    display: block;
   }
-  
-  th, td {
+  thead tr {
+    display: none;
+  }
+  tbody td {
+    position: relative;
+    padding-left: 50%;
+    text-align: left;
     border: 1px solid #ccc;
-    padding: 10px;
-    text-align: center;
   }
-  
-  th {
-    background-color: #1976d2;
-    color: white;
-  }
-  
-  input[type="number"] {
-    width: 70px;
-    padding: 5px;
-  }
-  
-  .btn {
-    display: inline-block;
-    margin: 20px 10px;
-    padding: 10px 30px;
-    background: #0d47a1;
-    color: white;
-    border: none;
-    border-radius: 6px;
-    font-size: 16px;
-    cursor: pointer;
-  }
-  
-  .btn:hover {
-    background: #08306b;
-  }
-  
-  #resultTable {
-    margin-top: 40px;
-  }
-  
-  .btn-container {
-    text-align: center;
-  }
-  
-  .info {
-    margin-top: 30px;
-    background: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  }
-  
-  .info h3 {
-    color: #0d47a1;
-    margin-top: 0;
-  }
-  
-  .info ul {
-    padding-left: 20px;
-  }
-  
-  .info li {
-    margin-bottom: 10px;
-    text-align: justify;
-  }
-  
-  .info li strong[color] {
+  tbody td::before {
+    position: absolute;
+    left: 10px;
+    top: 10px;
     font-weight: bold;
   }
-  
-  /* Warna khusus tiap kriteria */
-  .info li strong[style*='#2e7d32'] { color: #2e7d32; }
-  .info li strong[style*='#0288d1'] { color: #0288d1; }
-  .info li strong[style*='#6a1b9a'] { color: #6a1b9a; }
-  .info li strong[style*='#ef6c00'] { color: #ef6c00; }
-  .info li strong[style*='#c62828'] { color: #c62828; }
-  
-  /* Mobile View */
-  @media screen and (max-width: 768px) {
-    table, thead, tbody, th, td, tr {
-      display: block;
-      width: 100%;
-    }
-  
-    thead tr {
-      display: none;
-    }
-  
-    tbody tr {
-      margin-bottom: 20px;
-      background: #fff;
-      border: 1px solid #ccc;
-      border-radius: 10px;
-      padding: 10px;
-    }
-  
-    tbody td {
-      text-align: left;
-      padding-left: 50%;
-      position: relative;
-    }
-  
-    tbody td::before {
-      position: absolute;
-      left: 10px;
-      top: 10px;
-      white-space: nowrap;
-      font-weight: bold;
-    }
-  
-    tbody td:nth-of-type(1)::before { content: "Alternatif"; }
-    tbody td:nth-of-type(2)::before { content: "C1"; }
-    tbody td:nth-of-type(3)::before { content: "C2"; }
-    tbody td:nth-of-type(4)::before { content: "C3"; }
-    tbody td:nth-of-type(5)::before { content: "C4"; }
-    tbody td:nth-of-type(6)::before { content: "C5"; }
-  
-    .btn {
-      width: 90%;
-      margin: 10px auto;
-      display: block;
-    }
-  
-    .info ul {
-      padding-left: 15px;
-      font-size: 14px;
-    }
+  tbody td:nth-of-type(1)::before { content: "Alternatif"; }
+  tbody td:nth-of-type(2)::before { content: "C1"; }
+  tbody td:nth-of-type(3)::before { content: "C2"; }
+  tbody td:nth-of-type(4)::before { content: "C3"; }
+  tbody td:nth-of-type(5)::before { content: "C4"; }
+  tbody td:nth-of-type(6)::before { content: "C5"; }
+  .btn {
+    width: 90%;
+    margin: 10px auto;
   }
-  
+}
+/* Buat menu berbeda dari konten */
+.navbar {
+  background: linear-gradient(to right, #0d47a1, #1976d2);
+  color: white;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+}
+
+.nav-menu li a {
+  background: #1976d2;
+  padding: 8px 16px;
+  border-radius: 5px;
+  transition: background 0.3s ease;
+}
+
+.nav-menu li a:hover,
+.nav-menu li a.active {
+  background: #1565c0;
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Konten tampak seperti kartu */
+.section {
+  background: #ffffff;
+  margin: 30px auto;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+/* Judul bagian */
+.section h2 {
+  border-bottom: 2px solid #1976d2;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+table th,
+table td {
+  padding: 10px;
+  text-align: center;
+}
+
+table th {
+  background-color: #007bff;
+  color: white;
+}
+
+table td {
+  background-color: #f9f9f9;
+}

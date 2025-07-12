@@ -1,97 +1,81 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tugas Project UAS SPK untuk Bisnis - Blue Vicky & Sarif Hidayat</title>
-  <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      margin: 0;
-      padding: 20px;
-      background: #f4f6f9;
-      color: #333;
-    }
-    h1, h2 {
-      text-align: center;
-      color: #0d47a1;
-    }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 20px;
-    }
-    th, td {
-      border: 1px solid #ccc;
-      padding: 10px;
-      text-align: center;
-    }
-    th {
-      background-color: #1976d2;
-      color: white;
-    }
-    input[type="number"] {
-      width: 70px;
-      padding: 5px;
-    }
-    .btn {
-      display: inline-block;
-      margin: 20px 10px;
-      padding: 10px 30px;
-      background: #0d47a1;
-      color: white;
-      border: none;
-      border-radius: 6px;
-      font-size: 16px;
-      cursor: pointer;
-    }
-    .btn:hover {
-      background: #08306b;
-    }
-    #resultTable {
-      margin-top: 40px;
-    }
-    .btn-container {
-      text-align: center;
-    }
-    .info {
-      margin-top: 30px;
-      background: #fff;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
-    .info h3 {
-      color: #0d47a1;
-      margin-top: 0;
-    }
-    .info ul {
-      padding-left: 20px;
-    }
-    .info li {
-      margin-bottom: 10px;
-      text-align: justify;
-    }
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SPK MAUT App</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <h1>Sistem Pendukung Keputusan Untuk Pemilihan Supplier</h1>
-  <p style="text-align:center"><strong>Kelompok Blue Vicky & Sarif Hidayat</strong></p>
-
-  <div class="info">
-    <h3>Keterangan Kriteria</h3>
-    <ul>
-        <li><strong style="color: #2e7d32;">Ketersediaan Produk (C1):</strong> Semakin lengkap produk yang tersedia, semakin tinggi nilai yang diberikan. (Bobot: 0.3)</li>
-        <li><strong style="color: #0288d1;">Sarana Pengiriman (C2):</strong> Pengiriman dengan kendaraan sendiri dinilai lebih baik dibanding pihak ketiga. (Bobot: 0.2)</li>
-        <li><strong style="color: #6a1b9a;">Jarak Lokasi (C3):</strong> Semakin dekat lokasi supplier, semakin baik karena menekan biaya logistik. (Bobot: 0.2)</li>
-        <li><strong style="color: #ef6c00;">Tempo Pembayaran (C4):</strong> Supplier yang memberikan tempo lebih panjang mendapat nilai lebih tinggi. (Bobot: 0.1)</li>
-        <li><strong style="color: #c62828;">Garansi Produk (C5):</strong> Supplier yang menyediakan garansi langsung akan dinilai lebih baik. (Bobot: 0.2)</li>
+  <nav class="navbar">
+    <div class="nav-logo">SPK_UNTUK_BISNIS>MAUT</div>
+    <ul class="nav-menu">
+      <li><a href="#dashboard">Dashboard</a></li>
+      <li><a href="#kriteria">Kriteria</a></li>
+      <li><a href="#bobot">Bobot</a></li>
+      <li><a href="#alternatif">Alternatif</a></li>
+      <li><a href="#perhitungan">Perhitungan</a></li>
     </ul>
-  </div>
+  </nav>
 
-  <div class="info">
-    <h3>Daftar Alternatif</h3>
-    <ul>
+  <section id="dashboard" class="section">
+    <h1>Sistem Pendukung Keputusan Untuk Pemilihan Supplier</h1>
+    <p>Kelompok: <strong>Blue Vicky & Sarif Hidayat</strong></p>
+  </section>
+
+  <section id="kriteria" class="section">
+    <h2>Kriteria Penilaian</h2>
+    <ul class="info-list">
+      <li><strong class="c1">Ketersediaan Produk (C1):</strong> Produk lebih lengkap diberi nilai tinggi.</li>
+      <li><strong class="c2">Sarana Pengiriman (C2):</strong> Memiliki kendaraan sendiri lebih baik.</li>
+      <li><strong class="c3">Jarak Lokasi (C3):</strong> Semakin dekat, semakin baik.</li>
+      <li><strong class="c4">Tempo Pembayaran (C4):</strong> Tempo lebih panjang lebih disukai.</li>
+      <li><strong class="c5">Garansi Produk (C5):</strong> Adanya garansi dinilai lebih tinggi.</li>
+    </ul>
+  </section>
+
+  <section id="bobot" class="section">
+    <h2>Nilai Bobot Kriteria</h2>
+    <table border="1" cellpadding="10" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Kode Kriteria</th>
+          <th>Nama Kriteria</th>
+          <th>Bobot</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>C1</td>
+          <td>Ketersediaan Produk</td>
+          <td>0.25</td>
+        </tr>
+        <tr>
+          <td>C2</td>
+          <td>Sarana Pengiriman</td>
+          <td>0.20</td>
+        </tr>
+        <tr>
+          <td>C3</td>
+          <td>Jarak Lokasi</td>
+          <td>0.15</td>
+        </tr>
+        <tr>
+          <td>C4</td>
+          <td>Tempo Pembayaran</td>
+          <td>0.20</td>
+        </tr>
+        <tr>
+          <td>C5</td>
+          <td>Garansi Produk</td>
+          <td>0.20</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+  <section id="alternatif" class="section">
+    <h2>Alternatif Supplier</h2>
+    <ul class="info-list">
       <li>A1 - CV. Cipta Mandiri</li>
       <li>A2 - CV. Makmur Bandung</li>
       <li>A3 - MAF</li>
@@ -103,44 +87,40 @@
       <li>A9 - PT. Sinar Abadi</li>
       <li>A10 - CV. Anugrah Sentosa</li>
     </ul>
-  </div>
+  </section>
 
-  <h2>Input Penilaian Alternatif</h2>
-  <table id="inputTable">
-    <thead>
-      <tr>
-        <th>Alternatif</th>
-        <th>Ketersediaan Produk (C1)</th>
-        <th>Sarana Pengiriman (C2)</th>
-        <th>Jarak Lokasi (C3)</th>
-        <th>Tempo Pembayaran (C4)</th>
-        <th>Garansi Produk (C5)</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr><td>A1</td><td><input type="number" value="3"></td><td><input type="number" value="4"></td><td><input type="number" value="3"></td><td><input type="number" value="4"></td><td><input type="number" value="3"></td></tr>
-      <tr><td>A2</td><td><input type="number" value="5"></td><td><input type="number" value="4"></td><td><input type="number" value="3"></td><td><input type="number" value="4"></td><td><input type="number" value="3"></td></tr>
-      <tr><td>A3</td><td><input type="number" value="1"></td><td><input type="number" value="3"></td><td><input type="number" value="2"></td><td><input type="number" value="3"></td><td><input type="number" value="2"></td></tr>
-      <tr><td>A4</td><td><input type="number" value="1"></td><td><input type="number" value="3"></td><td><input type="number" value="3"></td><td><input type="number" value="5"></td><td><input type="number" value="4"></td></tr>
-      <tr><td>A5</td><td><input type="number" value="1"></td><td><input type="number" value="3"></td><td><input type="number" value="4"></td><td><input type="number" value="3"></td><td><input type="number" value="4"></td></tr>
-      <tr><td>A6</td><td><input type="number" value="5"></td><td><input type="number" value="4"></td><td><input type="number" value="4"></td><td><input type="number" value="3"></td><td><input type="number" value="3"></td></tr>
-      <tr><td>A7</td><td><input type="number" value="3"></td><td><input type="number" value="3"></td><td><input type="number" value="4"></td><td><input type="number" value="5"></td><td><input type="number" value="4"></td></tr>
-      <tr><td>A8</td><td><input type="number" value="4"></td><td><input type="number" value="3"></td><td><input type="number" value="3"></td><td><input type="number" value="2"></td><td><input type="number" value="3"></td></tr>
-      <tr><td>A9</td><td><input type="number" value="2"></td><td><input type="number" value="4"></td><td><input type="number" value="2"></td><td><input type="number" value="4"></td><td><input type="number" value="2"></td></tr>
-      <tr><td>A10</td><td><input type="number" value="3"></td><td><input type="number" value="2"></td><td><input type="number" value="3"></td><td><input type="number" value="3"></td><td><input type="number" value="3"></td></tr>
-    </tbody>
-  </table>
-
-  <div class="btn-container">
-    <button class="btn" onclick="hitungMAUT()">Hitung MAUT</button>
-    <button class="btn" onclick="resetInput()">Reset Nilai</button>
-  </div>
-
-  <div id="resultTable"></div>
+  <section id="perhitungan" class="section">
+    <h2>Input Penilaian Alternatif</h2>
+    <table id="inputTable">
+      <thead>
+        <tr>
+          <th>Alternatif</th>
+          <th>C1</th>
+          <th>C2</th>
+          <th>C3</th>
+          <th>C4</th>
+          <th>C5</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>A1</td><td><input type="number" value="3" /></td><td><input type="number" value="4" /></td><td><input type="number" value="3" /></td><td><input type="number" value="4" /></td><td><input type="number" value="3" /></td></tr>
+        <tr><td>A2</td><td><input type="number" value="5" /></td><td><input type="number" value="4" /></td><td><input type="number" value="3" /></td><td><input type="number" value="4" /></td><td><input type="number" value="3" /></td></tr>
+        <tr><td>A3</td><td><input type="number" value="2" /></td><td><input type="number" value="3" /></td><td><input type="number" value="2" /></td><td><input type="number" value="3" /></td><td><input type="number" value="2" /></td></tr>
+        <tr><td>A4</td><td><input type="number" value="1" /></td><td><input type="number" value="3" /></td><td><input type="number" value="4" /></td><td><input type="number" value="3" /></td><td><input type="number" value="4" /></td></tr>
+        <tr><td>A5</td><td><input type="number" value="4" /></td><td><input type="number" value="2" /></td><td><input type="number" value="3" /></td><td><input type="number" value="4" /></td><td><input type="number" value="3" /></td></tr>
+      </tbody>
+    </table>
+  
+    <div class="btn-container">
+      <button class="btn" onclick="hitungMAUT()">Hitung MAUT</button>
+      <button class="btn" onclick="resetInput()">Reset</button>
+    </div>
+  
+    <div id="resultTable"></div>
+  </section>
 
   <script>
     const bobot = [0.3, 0.2, 0.2, 0.1, 0.2];
-
     function hitungMAUT() {
       const rows = document.querySelectorAll("#inputTable tbody tr");
       const data = [];
@@ -167,8 +147,8 @@
       });
 
       data.sort((a, b) => b.score - a.score);
-      let html = '<h2>Hasil Perhitungan MAUT</h2>';
-      html += '<table><tr><th>Alternatif</th><th>Skor MAUT</th><th>Ranking</th></tr>';
+      let html = '<h3>Hasil Perhitungan</h3>';
+      html += '<table><tr><th>Alternatif</th><th>Skor</th><th>Ranking</th></tr>';
       data.forEach((d, i) => {
         html += `<tr><td>${d.nama}</td><td>${d.score.toFixed(4)}</td><td>${i + 1}</td></tr>`;
       });
@@ -177,10 +157,26 @@
     }
 
     function resetInput() {
-      const inputs = document.querySelectorAll('#inputTable input[type="number"]');
-      inputs.forEach(input => input.value = '0');
+      document.querySelectorAll('#inputTable input').forEach(input => input.value = 0);
       document.getElementById('resultTable').innerHTML = '';
     }
-  </script>
+
+ const links = document.querySelectorAll('.nav-menu a');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    document.querySelectorAll('section').forEach(section => {
+      const sectionTop = section.offsetTop - 100;
+      if (pageYOffset >= sectionTop) {
+        current = section.getAttribute('id');
+      }
+    });
+    links.forEach(link => {
+      link.classList.remove('active');
+      if (link.getAttribute('href') === `#${current}`) {
+        link.classList.add('active');
+      }
+    });
+  });
+</script>
 </body>
 </html>
